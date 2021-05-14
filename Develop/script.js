@@ -1,3 +1,4 @@
+// declarations!
 let generateBtn = document.getElementById('generate')
 document.getElementById('password').readonly = false
 const lowCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -7,17 +8,20 @@ const specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
 let user = [];
 let result = [];
+// reset
 let reset = _ => {
   user = []
 }
 
 document.getElementById('generate').addEventListener('click', _ => {
   reset()
-  let length = (prompt('Choose the number of characters in your password. \nMinimum: 8 characters\nMaximum: 128 characters'))
+  let length = (prompt('Choose the number of characters in your password. \nMinimum: 8 characters\nMaximum: 128 characters')).trim()
   if (parseInt(length) < 8 || parseInt(length) > 128) {
     alert('Please enter a number between 8 and 128 characters.\nPlease try again.')
-  } else if (isNaN(length) === true || length === '') {
-    alert('Please enter a number between 8 and 128 characters.\nPlease try again.')
+    return document.querySelector("textarea").value = ""
+  } else if (isNaN(length) === true || length === "" || length == null) {
+    alert('Please enter a "number" between 8 and 128 characters.\nPlease try again.')
+    return document.querySelector("textarea").value = ""
   } else {
     let chooseLowCase = confirm('Would you like to add lower case letters? \nClick OK for yes, click CANCEL for no.')
     if (chooseLowCase === true) {
