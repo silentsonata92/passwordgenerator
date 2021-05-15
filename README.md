@@ -14,7 +14,7 @@ The features of the project will have the following:
 -A style.css to help "style" the index.html. Primarily designing the password generator.
 
 A script.js to give the index.html or the password generator to be functional in which it is supposed to do:
-
+```
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
