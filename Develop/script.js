@@ -31,7 +31,7 @@ document.getElementById('generate').addEventListener('click', _ => {
     if (chooseLowCase === true) {
       result = result.concat(lowCase)
     } else {
-      result = result
+      result = []
       // confirm upper case letters to add
     } let chooseUpCase = confirm('Would you like to add Upper case letters? \nClick OK for yes, click CANCEL for no.')
     if (chooseUpCase === true) {
